@@ -79,7 +79,6 @@ class GamerServiceTest {
     void linkToGame_WhenGamerExists_ReturnsTrue() {
         when(gamerRepository.findById(1L)).thenReturn(Optional.of(gamer1));
         when(gameRepository.findById(1L)).thenReturn(Optional.of(game1));
-        when(gamerRepository.save(any(Gamer.class))).thenReturn(gamer1);
 
         boolean result = gamerService.linkToGame(1L, 1L, Level.N00B);
 
